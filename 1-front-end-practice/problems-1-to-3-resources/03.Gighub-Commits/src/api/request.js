@@ -1,4 +1,4 @@
-export default async function getRepos(url) {
+export default async function request(url) {
 
     const response = await fetch(url);
 
