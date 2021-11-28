@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Home = () => {
 
     return (
@@ -7,8 +9,8 @@ const Home = () => {
                 <img src="/images/welcome-meme.jpg" alt="meme" />
                 <h2>Login to see our memes right away!</h2>
                 <div id="button-div">
-                    <a href="#" className="button">Login</a>
-                    <a href="#" className="button">Register</a>
+                    <Link to="/login" className="button">Login</Link>
+                    <Link to="/register" className="button">Register</Link>
                 </div>
             </div>
         </section>
