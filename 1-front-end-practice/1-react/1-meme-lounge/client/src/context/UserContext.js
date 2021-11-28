@@ -6,11 +6,11 @@ const useUser = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
 
     const addUser = (user) => setUser(user);
 
-    const value = { userInfo, addUser };
+    const value = { user, addUser };
 
     return (
         <UserContext.Provider value={value}>
