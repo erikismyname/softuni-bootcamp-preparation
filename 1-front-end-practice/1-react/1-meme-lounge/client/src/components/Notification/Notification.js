@@ -2,7 +2,7 @@ const Notification = () => {
 
     return (
         <section id="notifications">
-            <div id="errorBox" class="notification">
+            <div id="errorBox" className="notification">
                 <span>MESSAGE</span>
             </div>
         </section>

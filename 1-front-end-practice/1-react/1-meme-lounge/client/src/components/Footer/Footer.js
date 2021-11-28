@@ -1,7 +1,7 @@
 const Footer = () => {
 
     return (
-        <footer class="footer">
+        <footer className="footer">
             <p>Created by SoftUni Delivery Team</p>
         </footer>
     );

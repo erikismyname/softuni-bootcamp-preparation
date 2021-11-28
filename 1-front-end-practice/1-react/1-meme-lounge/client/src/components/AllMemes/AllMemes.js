@@ -1,4 +1,4 @@
-import AllMemesCard from "./AllMemesCard.js";
+import AllMemesCard from "./AllMemesCard/AllMemesCard.js";
 
 const AllMemes = () => {
 
@@ -6,7 +6,7 @@ const AllMemes = () => {
         <section id="meme-feed">
             <h1>All Memes</h1>
             <div id="memes">
-                <p class="no-memes">No memes in database.</p>
+                <p className="no-memes">No memes in database.</p>
             </div>
         </section>
     );

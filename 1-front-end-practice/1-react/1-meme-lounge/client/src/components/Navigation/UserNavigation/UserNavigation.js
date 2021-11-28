@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
+
 const UserNavigation = () => {
 
     return (
-        <div class="user">
-            <a href="#">Create Meme</a>
-            <div class="profile">
+        <div className="user">
+            <Link to="/create-meme">Create Meme</Link>
+            <div className="profile">
                 <span>Welcome, email here</span>
-                <a href="#">My Profile</a>
-                <a href="#">Logout</a>
+                <Link to="/my-profile">My Profile</Link>
+                <Link to="/logout">Logout</Link>
             </div>
         </div>
     );

@@ -1,9 +1,9 @@
 const UserInfo = () => {
 
     return (
-        <article class="user-info">
+        <article className="user-info">
             <img id="user-avatar-url" alt="user-profile" src="/images/female.png" />
-            <div class="user-content">
+            <div className="user-content">
                 <p>Username: Mary</p>
                 <p>Email: mary @abv.bg</p>
                 <p>My memes count: 2</p>

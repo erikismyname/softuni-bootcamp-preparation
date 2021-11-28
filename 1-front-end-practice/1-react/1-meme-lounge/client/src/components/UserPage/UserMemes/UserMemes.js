@@ -5,9 +5,9 @@ const UserMemes = () => {
     return (
         <>
             <h1 id="user-listings-title">User Memes</h1>
-            <div class="user-meme-listings">
+            <div className="user-meme-listings">
                 <UserMemeCard />
-                <p class="no-memes">No memes in database.</p>
+                <p className="no-memes">No memes in database.</p>
             </div>
         </>
     );

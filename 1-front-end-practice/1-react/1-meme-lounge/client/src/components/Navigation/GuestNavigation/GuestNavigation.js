@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom';
+
 const GuestNavigation = () => {
 
     return (
-        <div class="guest">
-            <div class="profile">
-                <a href="#">Login</a>
-                <a href="#">Register</a>
+        <div className="guest">
+            <div className="profile">
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
             </div>
-            <a class="active" href="#">Home Page</a>
+            <Link to="/">Home Page</Link>
         </div>
     );
 

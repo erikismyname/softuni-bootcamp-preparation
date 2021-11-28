@@ -1,10 +1,10 @@
 const UserMemeCard = () => {
 
     return (
-        <div class="user-meme">
-            <p class="user-meme-title">Java Script joke</p>
-            <img class="userProfileImage" alt="meme-img" src="/images/1.png" />
-            <a class="button" href="#">Details</a>
+        <div className="user-meme">
+            <p className="user-meme-title">Java Script joke</p>
+            <img className="userProfileImage" alt="meme-img" src="/images/1.png" />
+            <a className="button" href="#">Details</a>
         </div>
     );
 

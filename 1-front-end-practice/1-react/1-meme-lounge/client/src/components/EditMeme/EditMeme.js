@@ -4,7 +4,7 @@ const EditMeme = () => {
         <section id="edit-meme">
             <form id="edit-form">
                 <h1>Edit Meme</h1>
-                <div class="container">
+                <div className="container">
                     <label htmlFor="title">Title</label>
                     <input id="title" type="text" placeholder="Enter Title" name="title" />
                     <label htmlFor="description">Description</label>
@@ -18,7 +18,7 @@ const EditMeme = () => {
                     </textarea>
                     <label htmlFor="imageUrl">Image Url</label>
                     <input id="imageUrl" type="text" placeholder="Enter Meme ImageUrl" name="imageUrl" />
-                    <input type="submit" class="registerbtn button" value="Edit Meme" />
+                    <input type="submit" className="registerbtn button" value="Edit Meme" />
                 </div>
             </form>
         </section>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import UserNavigation from "./UserNavigation/UserNavigation.js";
 import GuestNavigation from "./GuestNavigation/GuestNavigation.js";
 
@@ -5,7 +7,7 @@ const Navigation = () => {
 
     return (
         <nav>
-            <a href="#">All Memes</a>
+            <Link to="/all-memes">All Memes</Link>
             <UserNavigation />
             <GuestNavigation />
         </nav>

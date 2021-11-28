@@ -1,3 +1,5 @@
+import { Route, Switch } from 'react-router-dom';
+
 import Navigation from "./components/Navigation/Navigation.js";
 import Home from "./components/Home/Home.js";
 import UserLogin from "./components/UserLogin/UserLogin.js";
@@ -16,21 +18,16 @@ function App() {
 
             <Navigation />
 
-            <Home />
-
-            <UserLogin />
-
-            <UserRegister />
-
-            <AllMemes />
-
-            <CreateMeme />
-
-            <EditMeme />
-
-            <DetailsMeme />
-
-            <UserPage />
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/login" component={UserLogin} />
+                <Route path="/register" component={UserRegister} />
+                <Route path="/all-memes" component={AllMemes} />
+                <Route path="/create-meme" component={CreateMeme} />
+                <Route path="/details/:memeId" component={DetailsMeme} />
+                <Route path="/edit/:memeId" component={EditMeme} />
+                <Route path="/my-profile" component={UserPage} />
+            </Switch>
 
             <Footer />
 
