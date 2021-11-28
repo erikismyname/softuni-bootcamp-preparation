@@ -69,7 +69,7 @@ async function putRequest(url, body, token) {
 
 async function deleteRequest(url, token) {
 
-    return request(url, getRequestOptions('DELETE', null, token))
+    return request(url, getRequestOptions('DELETE', null, token));
 
 }
 
