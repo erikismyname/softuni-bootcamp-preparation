@@ -1,4 +1,4 @@
-import UserMemeCard from "./UserMemeCard.js";
+import UserMemeCard from "./UserMemeCard/UserMemeCard.js";
 
 const UserMemes = () => {
 

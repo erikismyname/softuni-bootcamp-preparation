@@ -1,5 +1,5 @@
-import UserNavigation from "./UserNavigation.js";
-import GuestNavigation from "./GuestNavigation.js";
+import UserNavigation from "./UserNavigation/UserNavigation.js";
+import GuestNavigation from "./GuestNavigation/GuestNavigation.js";
 
 const Navigation = () => {
 

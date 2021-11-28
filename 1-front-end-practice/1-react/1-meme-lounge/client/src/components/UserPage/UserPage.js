@@ -1,5 +1,5 @@
-import UserInfo from "./UserInfo.js";
-import UserMemes from "./UserMemes.js";
+import UserInfo from "./UserInfo/UserInfo.js";
+import UserMemes from "./UserMemes/UserMemes.js";
 
 const UserPage = () => {
 
