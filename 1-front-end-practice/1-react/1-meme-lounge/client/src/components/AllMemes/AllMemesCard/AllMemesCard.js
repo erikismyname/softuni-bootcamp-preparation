@@ -1,14 +1,16 @@
-const AllMemesCard = () => {
+import { Link } from 'react-router-dom';
+
+const AllMemesCard = ({ meme }) => {
 
     return (
         <div className="meme">
             <div className="card">
                 <div className="info">
-                    <p className="meme-title">Debugging</p>
-                    <img className="meme-image" alt="meme-img" src="/images/2.png" />
+                    <p className="meme-title">{meme.title}</p>
+                    <img className="meme-image" alt="meme-img" src={meme.imageUrl} />
                 </div>
                 <div id="data-buttons">
-                    <a className="button" href="#">Details</a>
+                    <Link className="button" to={`/details/${meme._id}`}>Details</Link>
                 </div>
             </div>
         </div>
