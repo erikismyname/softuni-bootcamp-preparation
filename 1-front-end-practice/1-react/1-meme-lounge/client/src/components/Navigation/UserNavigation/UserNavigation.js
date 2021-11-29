@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { useUser } from '../../../context/UserContext.js';
 
 import { logoutUser } from '../../../services/userService.js';
 
 const UserNavigation = () => {
+
+    const history = useHistory();
 
     const { user, addUser } = useUser();
 
@@ -17,6 +19,8 @@ const UserNavigation = () => {
             await logoutUser(user.accessToken);
 
             addUser(null);
+
+            history.push('/');
 
         } catch (err) {
 
