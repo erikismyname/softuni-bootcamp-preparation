@@ -8,7 +8,7 @@ const isGuest = (WrappedComponent) => {
 
         const { user } = useUser();
 
-        if (!user.username) return <Redirect to="/login" />;
+        if (Object.keys(user).length) return <Redirect to="/all-memes" />;
 
         return <WrappedComponent {...props} />
 

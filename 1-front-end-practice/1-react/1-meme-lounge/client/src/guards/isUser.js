@@ -8,7 +8,7 @@ const isUser = (WrappedComponent) => {
 
         const { user } = useUser();
 
-        if (user.username) return <Redirect to="/all-memes" />;
+        if (!Object.keys(user).length) return <Redirect to="/" />;
 
         return <WrappedComponent {...props} />;
 
