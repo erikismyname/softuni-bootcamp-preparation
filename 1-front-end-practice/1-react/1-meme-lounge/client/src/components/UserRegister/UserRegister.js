@@ -1,8 +1,58 @@
-const UserRegister = () => {
+import { Link } from 'react-router-dom';
+
+import { useUser } from '../../context/UserContext.js';
+
+import { registerUser } from '../../services/userService.js';
+
+const UserRegister = ({ history }) => {
+
+    const { addUser } = useUser();
+
+    const onFormSubmit = async (ev) => {
+
+        ev.preventDefault();
+
+        const formData = new FormData(ev.target);
+
+        const username = formData.get('username').trim();
+
+        const email = formData.get('email').trim();
+
+        const password = formData.get('password').trim();
+
+        const rePass = formData.get('repeatPass').trim();
+
+        const gender = formData.get('gender');
+
+        if (!username || !email || !password || !rePass || !gender) {
+
+            return alert('All fields are required!');
+
+        } else if (password != rePass) {
+
+            return alert('Password must match!');
+
+        }
+
+        try {
+
+            const user = await registerUser({ username, email, password, gender });
+
+            addUser(user);
+
+            history.push('/all-memes');
+
+        } catch (err) {
+
+            alert(err);
+
+        }
+
+    };
 
     return (
         <section id="register">
-            <form id="register-form">
+            <form onSubmit={onFormSubmit} id="register-form">
                 <div className="container">
                     <h1>Register</h1>
                     <label htmlFor="username">Username</label>
@@ -21,7 +71,7 @@ const UserRegister = () => {
                     </div>
                     <input type="submit" className="registerbtn button" value="Register" />
                     <div className="container signin">
-                        <p>Already have an account?<a href="#">Sign in</a>.</p>
+                        <p>Already have an account?<Link to="/login">Sign in</Link>.</p>
                     </div>
                 </div>
             </form>
