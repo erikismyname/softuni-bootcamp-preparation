@@ -1,12 +1,14 @@
-const UserInfo = () => {
+const UserInfo = ({ user, memesCount }) => {
+
+    const userImageUrl = `/images/${user.gender == 'male' ? 'male' : 'female'}.png`;
 
     return (
         <article className="user-info">
-            <img id="user-avatar-url" alt="user-profile" src="/images/female.png" />
+            <img id="user-avatar-url" alt="user-profile" src={userImageUrl} />
             <div className="user-content">
-                <p>Username: Mary</p>
-                <p>Email: mary @abv.bg</p>
-                <p>My memes count: 2</p>
+                <p>Username: {user.username}</p>
+                <p>Email: {user.email}</p>
+                <p>My memes count: {memesCount}</p>
             </div>
         </article>
     );
