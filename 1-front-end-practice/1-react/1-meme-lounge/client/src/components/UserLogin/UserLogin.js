@@ -26,7 +26,7 @@ const UserLogin = ({ history }) => {
 
             addUser(user);
 
-            history.push('all-memes');
+            history.push('/all-memes');
 
         } catch (err) {
 
