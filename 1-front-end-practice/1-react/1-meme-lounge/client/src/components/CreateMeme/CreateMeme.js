@@ -1,8 +1,42 @@
-const CreateMeme = () => {
+import { useUser } from '../../context/UserContext.js';
+
+import { createMeme } from '../../services/memeService.js';
+
+const CreateMeme = ({ history }) => {
+
+    const { user } = useUser();
+
+    const onFormSubmit = async (ev) => {
+
+        ev.preventDefault();
+
+        const formData = new FormData(ev.target);
+
+        const title = formData.get('title').trim();
+
+        const description = formData.get('description').trim();
+
+        const imageUrl = formData.get('imageUrl').trim();
+
+        if (!title || !description || !imageUrl) return alert('All fields are required!');
+
+        try {
+
+            await createMeme({ title, description, imageUrl }, user.accessToken);
+
+            history.push('/all-memes');
+
+        } catch (err) {
+
+            alert(err);
+
+        }
+
+    };
 
     return (
         <section id="create-meme">
-            <form id="create-form">
+            <form id="create-form" onSubmit={onFormSubmit}>
                 <div className="container">
                     <h1>Create Meme</h1>
                     <label htmlFor="title">Title</label>
