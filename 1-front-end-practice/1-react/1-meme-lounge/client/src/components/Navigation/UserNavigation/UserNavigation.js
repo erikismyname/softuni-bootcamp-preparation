@@ -18,7 +18,7 @@ const UserNavigation = () => {
 
             await logoutUser(user.accessToken);
 
-            addUser(null);
+            addUser({});
 
             history.push('/');
 

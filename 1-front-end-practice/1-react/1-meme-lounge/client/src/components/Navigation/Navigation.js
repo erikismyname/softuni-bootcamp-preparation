@@ -13,7 +13,7 @@ const Navigation = () => {
         <nav>
             <Link to="/all-memes">All Memes</Link>
 
-            {user
+            {user.username
                 ? <UserNavigation />
                 : <GuestNavigation />
             }

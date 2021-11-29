@@ -6,7 +6,7 @@ const useUser = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
 
     const addUser = (user) => setUser(user);
 
