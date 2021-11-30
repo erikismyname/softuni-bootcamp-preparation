@@ -36,9 +36,9 @@ function App() {
                     <Route path="/my-profile" component={isUser(UserPage)} />
                 </Switch>
 
-                <Footer />
-
             </UserProvider>
+
+            <Footer />
 
         </div>
     );
