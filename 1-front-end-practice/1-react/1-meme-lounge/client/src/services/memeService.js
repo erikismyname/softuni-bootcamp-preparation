@@ -1,4 +1,5 @@
 import { ENDPOINTS } from '../config/constants.js';
+
 import * as api from '../api/api.js';
 
 async function getAllMemes() {

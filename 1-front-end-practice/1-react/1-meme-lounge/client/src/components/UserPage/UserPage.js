@@ -1,15 +1,15 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-import {useUser} from '../../context/UserContext.js';
+import { useUser } from '../../context/UserContext.js';
 
-import {getMyMemes} from '../../services/memeService.js';
+import { getMyMemes } from '../../services/memeService.js';
 
 import UserInfo from "./UserInfo/UserInfo.js";
 import UserMemes from "./UserMemes/UserMemes.js";
 
 const UserPage = () => {
 
-    const {user} = useUser();
+    const { user } = useUser();
 
     const [memes, setMemes] = useState([]);
 
@@ -23,7 +23,7 @@ const UserPage = () => {
 
         } catch (err) {
 
-            alert (err);
+            alert(err);
 
         }
 
