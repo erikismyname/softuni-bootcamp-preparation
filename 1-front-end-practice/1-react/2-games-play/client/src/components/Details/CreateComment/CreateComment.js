@@ -1,3 +1,6 @@
+import Textarea from "../../common/forms/Textarea/Textarea.js";
+import Input from "../../common/forms/Input/Input.js";
+
 const CreateComment = () => {
 
     return (
@@ -5,8 +8,8 @@ const CreateComment = () => {
         <article class="create-comment">
             <label>Add new comment:</label>
             <form class="form">
-                <textarea name="comment" placeholder="Comment......"></textarea>
-                <input class="btn submit" type="submit" value="Add Comment" />
+                <Textarea name="comment" placeholder="Comment......" />
+                <Input class="btn submit" type="submit" value="Add Comment" />
             </form>
         </article>
 

@@ -7,7 +7,7 @@ const Details = () => {
 
         <section id="game-details">
             <h1>Game Details</h1>
-            
+
             <InfoSection />
 
             <CreateComment />
