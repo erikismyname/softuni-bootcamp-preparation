@@ -1,3 +1,7 @@
+import Label from '../common/forms/Label/Label.js';
+import Input from '../common/forms/Input/Input.js';
+import Textarea from '../common/forms/Textarea/Textarea.js';
+
 const Create = () => {
 
     return (
@@ -5,23 +9,25 @@ const Create = () => {
         <section id="create-page" class="auth">
             <form id="create">
                 <div class="container">
-
                     <h1>Create Game</h1>
-                    <label htmlFor="leg-title">Legendary title:</label>
-                    <input type="text" id="title" name="title" placeholder="Enter game title..." />
 
-                    <label htmlFor="category">Category:</label>
-                    <input type="text" id="category" name="category" placeholder="Enter game category..." />
+                    <Label htmlFor="leg-title" text="Legendary title:" />
+                    <Input type="text" id="title" name="title" placeholder="Enter game title..." />
 
-                    <label htmlFor="levels">MaxLevel:</label>
-                    <input type="number" id="maxLevel" name="maxLevel" min="1" placeholder="1" />
+                    <Label htmlFor="category" text="Category:" />
+                    <Input type="text" id="category" name="category" placeholder="Enter game category..." />
 
-                    <label htmlFor="game-img">Image:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
+                    <Label htmlFor="levels" text="MaxLevel:" />
+                    <Input type="number" id="maxLevel" name="maxLevel" min="1" placeholder="1" />
 
-                    <label htmlFor="summary">Summary:</label>
-                    <textarea name="summary" id="summary"></textarea>
-                    <input class="btn submit" type="submit" value="Create Game" />
+                    <Label htmlFor="game-img" text="Image:" />
+                    <Input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
+
+                    <Label htmlFor="summary" text="Summary:" />
+                    <Textarea name="summary" id="summary" />
+
+                    <Input class="btn submit" type="submit" value="Create Game" />
+
                 </div>
             </form>
         </section>

@@ -20,7 +20,7 @@ const InfoSection = () => {
             <GameComments />
 
             <ActionBtns />
-            
+
         </div>
 
     );

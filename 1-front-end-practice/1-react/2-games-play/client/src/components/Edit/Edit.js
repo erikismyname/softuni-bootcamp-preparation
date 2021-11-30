@@ -1,3 +1,7 @@
+import Label from "../common/forms/Label/Label.js";
+import Input from "../common/forms/Input/Input.js";
+import Textarea from "../common/forms/Textarea/Textarea.js";
+
 const Edit = () => {
 
     return (
@@ -5,23 +9,24 @@ const Edit = () => {
         <section id="edit-page" class="auth">
             <form id="edit">
                 <div class="container">
-
                     <h1>Edit Game</h1>
-                    <label htmlFor="leg-title">Legendary title:</label>
-                    <input type="text" id="title" name="title" value="" />
 
-                    <label htmlFor="category">Category:</label>
-                    <input type="text" id="category" name="category" value="" />
+                    <Label htmlFor="leg-title" text="Legendary title:" />
+                    <Input type="text" id="title" name="title" defaultValue="" />
 
-                    <label htmlFor="levels">MaxLevel:</label>
-                    <input type="number" id="maxLevel" name="maxLevel" min="1" value="" />
+                    <Label htmlFor="category" text="Category:" />
+                    <Input type="text" id="category" name="category" defaultValue="" />
 
-                    <label htmlFor="game-img">Image:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" value="" />
+                    <Label htmlFor="levels" text="MaxLevel:" />
+                    <Input type="number" id="maxLevel" name="maxLevel" min="1" defaultValue="" />
 
-                    <label htmlFor="summary">Summary:</label>
-                    <textarea name="summary" id="summary"></textarea>
-                    <input class="btn submit" type="submit" value="Edit Game" />
+                    <Label htmlFor="game-img" text="Image:" />
+                    <Input type="text" id="imageUrl" name="imageUrl" defaultValue="" />
+
+                    <Label htmlFor="summary" text="Summary:" />
+                    <Textarea name="summary" id="summary" />
+
+                    <Input class="btn submit" type="submit" value="Edit Game" />
 
                 </div>
             </form>
