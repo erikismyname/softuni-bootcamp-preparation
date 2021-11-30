@@ -1,6 +1,6 @@
 const GameHeader = () => {
 
-    retrun(
+    return (
 
         <div class="game-header">
             <img class="game-img" src="images/MineCraft.png" />
