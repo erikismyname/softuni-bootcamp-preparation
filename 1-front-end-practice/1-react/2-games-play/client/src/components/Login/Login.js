@@ -1,3 +1,6 @@
+import Input from "../common/forms/Input/Input.js";
+import Label from "../common/forms/Label/Label.js";
+
 const Login = () => {
 
     return (
@@ -8,11 +11,15 @@ const Login = () => {
                 <div class="container">
                     <div class="brand-logo"></div>
                     <h1>Login</h1>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Sokka@gmail.com" />
-                    <label for="login-pass">Password:</label>
-                    <input type="password" id="login-password" name="password" />
-                    <input type="submit" class="btn submit" value="Login" />
+
+                    <Label for="email" text="Email:" />
+                    <Input type="email" id="email" name="email" placeholder="Sokka@gmail.com" />
+
+                    <Label for="login-pass" text="Password:" />
+                    <Input type="password" id="login-password" name="password" />
+
+                    <Input type="submit" class="btn submit" value="Login" />
+
                     <p class="field" >
                         <span>If you don't have profile click <a href="#">here</a></span>
                     </p>

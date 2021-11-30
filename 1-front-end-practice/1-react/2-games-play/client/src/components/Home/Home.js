@@ -12,7 +12,7 @@ const Home = () => {
             <img src="./images/four_slider_img01.png" alt="hero" />
 
             <LatestGames />
-            
+
         </section>
 
     );

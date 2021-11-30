@@ -1,3 +1,6 @@
+import Input from "../common/forms/Input/Input.js";
+import Label from "../common/forms/Label/Label.js";
+
 const Register = () => {
 
     return (
@@ -8,16 +11,16 @@ const Register = () => {
                     <div class="brand-logo"></div>
                     <h1>Register</h1>
 
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="maria@email.com" />
+                    <Label htmlFor="email" text="Email:" />
+                    <Input type="email" id="email" name="email" placeholder="maria@email.com" />
 
-                    <label htmlFor="pass">Password:</label>
-                    <input type="password" name="password" id="register-password" />
+                    <Label htmlFor="pass" text="Password:" />
+                    <Input type="password" name="password" id="register-password" />
 
-                    <label htmlFor="con-pass">Confirm Password:</label>
-                    <input type="password" name="confirm-password" id="confirm-password" />
+                    <Label htmlFor="con-pass" text="Confirm Password:" />
+                    <Input type="password" name="confirm-password" id="confirm-password" />
 
-                    <input class="btn submit" type="submit" value="Register" />
+                    <Input class="btn submit" type="submit" value="Register" />
 
                     <p class="field">
                         <span>If you already have profile click <a href="#">here</a></span>
