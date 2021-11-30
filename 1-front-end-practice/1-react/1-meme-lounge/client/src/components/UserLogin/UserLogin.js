@@ -18,7 +18,7 @@ const UserLogin = ({ history }) => {
 
         const password = formData.get('password').trim();
 
-        if (!email || !password) return alert('Both fields are required!');
+        if (!email || !password) return alert('All fields are required!');
 
         try {
 
