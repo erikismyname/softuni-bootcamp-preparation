@@ -9,7 +9,7 @@ const Login = ({ history }) => {
 
     const { addUser } = useUser();
 
-    const onFormSubmit = async (ev) => {
+    const onLoginFormSubmit = async (ev) => {
 
         ev.preventDefault();
 
@@ -38,7 +38,7 @@ const Login = ({ history }) => {
     return (
 
         <section id="login-page" className="auth">
-            <form id="login" onSubmit={onFormSubmit}>
+            <form id="login" onSubmit={onLoginFormSubmit}>
 
                 <div className="container">
                     <div className="brand-logo"></div>
