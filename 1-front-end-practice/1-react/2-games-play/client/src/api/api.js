@@ -23,3 +23,28 @@ async function request(url, options) {
     }
 
 }
+
+function getRequestOptions(method = 'GET', body, token) {
+
+    const options = {
+        method,
+        headers: {},
+    };
+
+    if (body) {
+
+        request.headers['Content-Type'] = 'application/json';
+
+        options.headers.body = body;
+
+    }
+
+    if (token) {
+
+        options.headers['X-Authorization'] = token;
+
+    }
+
+    return options;
+
+}
