@@ -2,16 +2,16 @@ const LatestGameCard = () => {
 
     return (
 
-        <div class="game">
-            <div class="image-wrap">
+        <div className="game">
+            <div className="image-wrap">
                 <img src="./images/CoverFire.png" />
             </div>
             <h3>Cover Fire</h3>
-            <div class="rating">
+            <div className="rating">
                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
-            <div class="data-buttons">
-                <a href="#" class="btn details-btn">Details</a>
+            <div className="data-buttons">
+                <a href="#" className="btn details-btn">Details</a>
             </div>
         </div>
 

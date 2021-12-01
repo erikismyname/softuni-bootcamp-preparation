@@ -2,17 +2,17 @@ const GameComments = () => {
 
     return (
 
-        <div class="details-comments">
+        <div className="details-comments">
             <h2>Comments:</h2>
             <ul>
-                <li class="comment">
+                <li className="comment">
                     <p>Content: I rate this one quite highly.</p>
                 </li>
-                <li class="comment">
+                <li className="comment">
                     <p>Content: The best game.</p>
                 </li>
             </ul>
-            <p class="no-comment">No comments.</p>
+            <p className="no-comment">No comments.</p>
         </div>
 
     );

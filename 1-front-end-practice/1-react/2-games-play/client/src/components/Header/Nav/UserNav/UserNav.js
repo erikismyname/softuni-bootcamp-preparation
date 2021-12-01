@@ -1,16 +1,31 @@
 import { Link, useHistory } from 'react-router-dom';
 
+import useUser from '../../../../hooks/useUser.js';
 import { logoutUser } from '../../../../services/userService.js';
 
 const UserNav = () => {
 
+    const { user, addUser } = useUser();
+
     const history = useHistory();
 
-    const onLogoutBtnClick = async () => {
+    const onLogoutBtnClick = async (ev) => {
 
-        await logoutUser();
+        ev.preventDefault();
 
-        history.push('/');
+        try {
+
+            await logoutUser(user.accessToken);
+
+            addUser({});
+
+            history.push('/');
+
+        } catch (err) {
+
+            alert(err);
+
+        }
 
     };
 

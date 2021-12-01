@@ -2,9 +2,9 @@ const ActionBtns = () => {
 
     return (
 
-        <div class="buttons">
-            <a href="#" class="button">Edit</a>
-            <a href="#" class="button">Delete</a>
+        <div className="buttons">
+            <a href="#" className="button">Edit</a>
+            <a href="#" className="button">Delete</a>
         </div>
 
     );

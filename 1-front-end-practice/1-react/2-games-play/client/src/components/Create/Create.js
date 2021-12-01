@@ -6,9 +6,9 @@ const Create = () => {
 
     return (
 
-        <section id="create-page" class="auth">
+        <section id="create-page" className="auth">
             <form id="create">
-                <div class="container">
+                <div className="container">
                     <h1>Create Game</h1>
 
                     <Label htmlFor="leg-title" text="Legendary title:" />
@@ -26,7 +26,7 @@ const Create = () => {
                     <Label htmlFor="summary" text="Summary:" />
                     <Textarea name="summary" id="summary" />
 
-                    <Input class="btn submit" type="submit" value="Create Game" />
+                    <Input className="btn submit" type="submit" value="Create Game" />
 
                 </div>
             </form>

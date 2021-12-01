@@ -5,11 +5,11 @@ const CreateComment = () => {
 
     return (
 
-        <article class="create-comment">
+        <article className="create-comment">
             <label>Add new comment:</label>
-            <form class="form">
+            <form className="form">
                 <Textarea name="comment" placeholder="Comment......" />
-                <Input class="btn submit" type="submit" value="Add Comment" />
+                <Input className="btn submit" type="submit" value="Add Comment" />
             </form>
         </article>
 

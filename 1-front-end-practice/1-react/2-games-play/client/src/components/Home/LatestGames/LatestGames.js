@@ -7,7 +7,7 @@ const LatestGames = () => {
         <div id="home-page">
             <h1>Latest Games</h1>
             <LatestGameCard />
-            <p class="no-articles">No games yet</p>
+            <p className="no-articles">No games yet</p>
         </div>
 
     );

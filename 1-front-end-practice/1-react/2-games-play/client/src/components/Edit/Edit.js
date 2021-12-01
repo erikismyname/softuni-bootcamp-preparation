@@ -6,9 +6,9 @@ const Edit = () => {
 
     return (
 
-        <section id="edit-page" class="auth">
+        <section id="edit-page" className="auth">
             <form id="edit">
-                <div class="container">
+                <div className="container">
                     <h1>Edit Game</h1>
 
                     <Label htmlFor="leg-title" text="Legendary title:" />
@@ -26,7 +26,7 @@ const Edit = () => {
                     <Label htmlFor="summary" text="Summary:" />
                     <Textarea name="summary" id="summary" />
 
-                    <Input class="btn submit" type="submit" value="Edit Game" />
+                    <Input className="btn submit" type="submit" value="Edit Game" />
 
                 </div>
             </form>
