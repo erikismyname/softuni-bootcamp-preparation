@@ -39,9 +39,9 @@ function getRequestOptions(method, token, body) {
 
     if (body) {
 
-        request.headers['Content-Type'] = 'application/json';
+        options.headers['Content-Type'] = 'application/json';
 
-        options.headers.body = body;
+        options.body = JSON.stringify(body);
 
     }
 
