@@ -1,3 +1,7 @@
+import { Route, Switch } from 'react-router-dom';
+
+import { UserProvider } from './contexts/UserContext.js';
+
 import Header from "./components/Header/Header.js";
 import Home from "./components/Home/Home.js";
 import Login from "./components/Login/Login.js";
@@ -15,22 +19,29 @@ function App() {
 
             <Header />
 
-            <Home />
+            <Switch>
 
-            <Login />
+                <Route path="/" exact component={Home} />
 
-            <Register />
+                <Route path="/catalog" component={Catalog} />
 
-            <Create />
+                <UserProvider>
 
-            <Edit />
+                    <Route path="/login" component={Login} />
 
-            <Details />
+                    <Route path="/register" component={Register} />
 
-            <Catalog />
+                    <Route path="/details/:gameId" component={Details} />
+
+                </UserProvider>
+
+                <Route path="/create" component={Create} />
+
+                <Route path="/edit/:gameId" component={Edit} />
+
+            </Switch>
 
         </div >
-
 
     );
 
