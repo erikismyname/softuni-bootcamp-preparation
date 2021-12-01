@@ -72,3 +72,10 @@ async function deleteRequest(url, token) {
     return request(url, getRequestOptions('DELETE', token));
 
 }
+
+export {
+    getRequest,
+    postRequest,
+    putRequest,
+    deleteRequest,
+};
