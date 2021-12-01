@@ -24,12 +24,18 @@ async function request(url, options) {
 
 }
 
-function getRequestOptions(method = 'GET', body, token) {
+function getRequestOptions(method, token, body) {
 
     const options = {
         method,
         headers: {},
     };
+
+    if (token) {
+
+        options.headers['X-Authorization'] = token;
+
+    }
 
     if (body) {
 
@@ -39,12 +45,12 @@ function getRequestOptions(method = 'GET', body, token) {
 
     }
 
-    if (token) {
-
-        options.headers['X-Authorization'] = token;
-
-    }
-
     return options;
+
+}
+
+async function getRequest(url, token) {
+
+    return request(url, getRequestOptions('GET', token));
 
 }
