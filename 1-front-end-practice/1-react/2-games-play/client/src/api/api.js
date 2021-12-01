@@ -54,3 +54,9 @@ async function getRequest(url, token) {
     return request(url, getRequestOptions('GET', token));
 
 }
+
+async function postRequest(url, token, body) {
+
+    return request(url, getRequestOptions('POST', token, body));
+
+}
