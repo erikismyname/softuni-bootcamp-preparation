@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const GuestNav = () => {
 
     return (
 
         <div id="guest">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
         </div>
 
     );
