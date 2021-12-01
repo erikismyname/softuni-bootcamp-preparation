@@ -1,5 +1,3 @@
-import useUser from '../hooks/useUser.js';
-
 async function request(url, options) {
 
     const response = await fetch(url, options);
@@ -26,16 +24,12 @@ async function request(url, options) {
 
 }
 
-function getRequestOptions(method = 'GET', body) {
+function getRequestOptions(method, token, body) {
 
     const options = {
         method,
         headers: {},
     };
-
-    const { user } = useUser();
-
-    const token = user?.accessToken;
 
     if (token) {
 
@@ -55,27 +49,27 @@ function getRequestOptions(method = 'GET', body) {
 
 }
 
-async function getRequest(url) {
+async function getRequest(url, token) {
 
-    return request(url, getRequestOptions());
-
-}
-
-async function postRequest(url, body) {
-
-    return request(url, getRequestOptions('POST', body));
+    return request(url, getRequestOptions('GET', token));
 
 }
 
-async function putRequest(url, body) {
+async function postRequest(url, token, body) {
 
-    return request(url, getRequestOptions('POST', body));
+    return request(url, getRequestOptions('POST', token, body));
 
 }
 
-async function deleteRequest(url) {
+async function putRequest(url, token, body) {
 
-    return request(url, getRequestOptions('DELETE'));
+    return request(url, getRequestOptions('POST', token, body));
+
+}
+
+async function deleteRequest(url, token) {
+
+    return request(url, getRequestOptions('DELETE', token));
 
 }
 
