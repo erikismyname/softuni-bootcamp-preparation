@@ -18,3 +18,9 @@ async function logoutUser(token) {
     return getRequest(ENDPOINTS.user + '/logout', token);
 
 }
+
+export {
+    loginUser,
+    registerUser,
+    logoutUser,
+};
