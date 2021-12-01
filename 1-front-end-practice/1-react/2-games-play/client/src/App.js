@@ -17,15 +17,15 @@ function App() {
 
         <div id="box">
 
-            <Header />
+            <UserProvider>
 
-            <Switch>
+                <Header />
 
-                <Route path="/" exact component={Home} />
+                <Switch>
 
-                <Route path="/catalog" component={Catalog} />
+                    <Route path="/" exact component={Home} />
 
-                <UserProvider>
+                    <Route path="/catalog" component={Catalog} />
 
                     <Route path="/login" component={Login} />
 
@@ -33,13 +33,13 @@ function App() {
 
                     <Route path="/details/:gameId" component={Details} />
 
-                </UserProvider>
+                    <Route path="/create" component={Create} />
 
-                <Route path="/create" component={Create} />
+                    <Route path="/edit/:gameId" component={Edit} />
 
-                <Route path="/edit/:gameId" component={Edit} />
+                </Switch>
 
-            </Switch>
+            </UserProvider>
 
         </div >
 
