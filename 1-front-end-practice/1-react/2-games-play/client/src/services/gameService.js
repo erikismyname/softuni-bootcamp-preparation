@@ -19,21 +19,21 @@ async function getOneGame(gameId) {
 
 }
 
-async function createGame(gameData) {
+async function createGame(token, gameData) {
 
-    return api.postRequest(ENDPOINTS.game, gameData);
-
-}
-
-async function editGame(gameId, gameData) {
-
-    return api.putRequest(`${ENDPOINTS.game}/${gameId}`, gameData);
+    return api.postRequest(ENDPOINTS.game, token, gameData);
 
 }
 
-async function deleteGame(gameId) {
+async function editGame(gameId, token, gameData) {
 
-    return api.deleteRequest(`${ENDPOINTS.game}/${gameId}`);
+    return api.putRequest(`${ENDPOINTS.game}/${gameId}`, token, gameData);
+
+}
+
+async function deleteGame(gameId, token) {
+
+    return api.deleteRequest(`${ENDPOINTS.game}/${gameId}`, token);
 
 }
 

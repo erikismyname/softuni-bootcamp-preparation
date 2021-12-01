@@ -13,9 +13,9 @@ async function registerUser(userData) {
 
 }
 
-async function logoutUser() {
+async function logoutUser(token) {
 
-    return getRequest(ENDPOINTS.user + '/logout');
+    return getRequest(ENDPOINTS.user + '/logout', token);
 
 }
 
