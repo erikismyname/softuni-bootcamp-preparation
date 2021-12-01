@@ -6,13 +6,9 @@ const Home = () => {
     return (
 
         <section id="welcome-world">
-
             <WelcomeMsges />
-
             <img src="./images/four_slider_img01.png" alt="hero" />
-
             <LatestGames />
-
         </section>
 
     );
