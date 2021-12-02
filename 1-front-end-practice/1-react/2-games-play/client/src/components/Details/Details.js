@@ -12,7 +12,7 @@ const Details = ({ match, history }) => {
 
     const { user } = useUser();
 
-    const [game, setGame] = useState([]);
+    const [game, setGame] = useState({});
 
     const [comments, setComments] = useState([]);
 
@@ -36,11 +36,21 @@ const Details = ({ match, history }) => {
 
         if (!comment) return alert('You cannot create an empty comment!');
 
-        postComment({ gameId, comment }, user.accessToken)
-            .then(comment => setComments((oldComments) => [...oldComments, comment]))
-            .catch(err => alert(err));
+        try {
 
-        ev.target.comment.value = '';
+            const newComment = await postComment({ gameId, comment }, user.accessToken);
+
+            (() => {
+                setComments((oldComments) => [...oldComments, newComment]);
+            })();
+
+            ev.target.comment.value = '';
+
+        } catch (err) {
+
+            alert(err);
+
+        }
 
     };
 
