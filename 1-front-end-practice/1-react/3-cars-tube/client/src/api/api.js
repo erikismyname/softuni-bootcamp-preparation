@@ -31,3 +31,24 @@ const request = async (url, options) => {
     }
 
 };
+
+const getRequestOptions = (method, token, body) => {
+
+    const options = {
+        method,
+        headers: {},
+    };
+
+    if (token) options.headers['X-Authorization'] = token;
+
+    if (body) {
+
+        options.headers['Content-Type'] = 'application/json';
+
+        options.body = JSON.stringify(body);
+
+    }
+
+    return options;
+
+}
