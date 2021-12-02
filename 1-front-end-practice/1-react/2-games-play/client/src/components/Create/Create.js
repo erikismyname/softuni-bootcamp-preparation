@@ -1,13 +1,43 @@
+import useUser from '../../hooks/useUser.js';
+import { createGame } from '../../services/gameService.js';
 import Label from '../common/forms/Label/Label.js';
 import Input from '../common/forms/Input/Input.js';
 import Textarea from '../common/forms/Textarea/Textarea.js';
 
-const Create = () => {
+const Create = ({ history }) => {
+
+    const { user } = useUser();
+
+    const onCreateFormSubmit = async (ev) => {
+
+        ev.preventDefault();
+
+        const [title, category, maxLvl, imageUrl, summary] = [...ev.target].slice(0, 5).map(i => i.value);
+
+        if (!title || !category || !maxLvl || !imageUrl || !summary) {
+
+            return alert('All fiends are required!');
+
+        }
+
+        try {
+
+            createGame(user.accessToken, { title, category, maxLvl, imageUrl, summary });
+
+            history.push('/');
+
+        } catch (err) {
+
+            console.log(err);
+
+        }
+
+    };
 
     return (
 
         <section id="create-page" className="auth">
-            <form id="create">
+            <form id="create" onSubmit={onCreateFormSubmit}>
                 <div className="container">
                     <h1>Create Game</h1>
 
