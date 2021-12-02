@@ -5,7 +5,7 @@ function App() {
 
             <header>
                 <nav>
-                    <a class="active" href="#">Home</a>
+                    <a className="active" href="#">Home</a>
                     <a href="#">All Listings</a>
                     <a href="#">By Year</a>
                     <div id="guest">
@@ -29,16 +29,16 @@ function App() {
             <section id="main">
                 <div id="welcome-container">
                     <h1>Welcome To Car Tube</h1>
-                    <img class="hero" src="/images/car-png.webp" alt="carIntro" />
+                    <img className="hero" src="/images/car-png.webp" alt="carIntro" />
                     <h2>To see all the listings click the link below:</h2>
                     <div>
-                        <a href="#" class="button">Listings</a>
+                        <a href="#" className="button">Listings</a>
                     </div>
                 </div>
             </section>
 
             <section id="login">
-                <div class="container">
+                <div className="container">
                     <form id="login-form" action="#" method="post">
                         <h1>Login</h1>
                         <p>Please enter your credentials.</p>
@@ -49,9 +49,9 @@ function App() {
 
                         <p>Password</p>
                         <input type="password" placeholder="Enter Password" name="password" />
-                        <input type="submit" class="registerbtn" value="Login" />
+                        <input type="submit" className="registerbtn" value="Login" />
                     </form>
-                    <div class="signin">
+                    <div className="signin">
                         <p>Dont have an account?
                             <a href="#">Sign up</a>.
                         </p>
@@ -60,7 +60,7 @@ function App() {
             </section>
 
             <section id="register">
-                <div class="container">
+                <div className="container">
                     <form id="register-form">
                         <h1>Register</h1>
                         <p>Please fill in this form to create an account.</p>
@@ -76,9 +76,9 @@ function App() {
                         <input type="password" placeholder="Repeat Password" name="repeatPass" required />
                         <hr />
 
-                        <input type="submit" class="registerbtn" value="Register" />
+                        <input type="submit" className="registerbtn" value="Register" />
                     </form>
-                    <div class="signin">
+                    <div className="signin">
                         <p>Already have an account?
                             <a href="#">Sign in</a>.
                         </p>
@@ -88,62 +88,62 @@ function App() {
 
             <section id="car-listings">
                 <h1>Car Listings</h1>
-                <div class="listings">
+                <div className="listings">
 
-                    <div class="listing">
-                        <div class="preview">
+                    <div className="listing">
+                        <div className="preview">
                             <img src="/images/audia3.jpg" alt="" />
                         </div>
                         <h2>Audi A3</h2>
-                        <div class="info">
-                            <div class="data-info">
+                        <div className="info">
+                            <div className="data-info">
                                 <h3>Year: 2018</h3>
                                 <h3>Price: 25000 $</h3>
                             </div>
-                            <div class="data-buttons">
-                                <a href="#" class="button-carDetails">Details</a>
+                            <div className="data-buttons">
+                                <a href="#" className="button-carDetails">Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="listing">
-                        <div class="preview">
+                    <div className="listing">
+                        <div className="preview">
                             <img src="/images/benz.jpg" alt="" />
                         </div>
-                        <h2>Mercedes A-class </h2>
-                        <div class="info">
-                            <div class="data-info">
+                        <h2>Mercedes A-className </h2>
+                        <div className="info">
+                            <div className="data-info">
                                 <h3>Year: 2016</h3>
                                 <h3>Price: 27000 $</h3>
                             </div>
-                            <div class="data-buttons">
-                                <a href="#" class="button-carDetails">Details</a>
+                            <div className="data-buttons">
+                                <a href="#" className="button-carDetails">Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="listing">
-                        <div class="preview">
+                    <div className="listing">
+                        <div className="preview">
                             <img src="/images/bmw.jpg" alt="" />
                         </div>
                         <h2>BMW 3 series</h2>
-                        <div class="info">
-                            <div class="data-info">
+                        <div className="info">
+                            <div className="data-info">
                                 <h3>Year: 2016</h3>
                                 <h3>Price: 22000 $</h3>
                             </div>
-                            <div class="data-buttons">
-                                <a href="#" class="button-carDetails">Details</a>
+                            <div className="data-buttons">
+                                <a href="#" className="button-carDetails">Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <p class="no-cars">No cars in database.</p>
+                    <p className="no-cars">No cars in database.</p>
                 </div>
             </section>
 
             <section id="create-listing">
-                <div class="container">
+                <div className="container">
                     <form id="create-form">
                         <h1>Create Car Listing</h1>
                         <p>Please fill in this form to create an listing.</p>
@@ -168,13 +168,13 @@ function App() {
                         <input type="number" placeholder="Enter Car Price" name="price" />
 
                         <hr />
-                        <input type="submit" class="registerbtn" value="Create Listing" />
+                        <input type="submit" className="registerbtn" value="Create Listing" />
                     </form>
                 </div>
             </section>
 
             <section id="edit-listing">
-                <div class="container">
+                <div className="container">
 
                     <form id="edit-form">
                         <h1>Edit Car Listing</h1>
@@ -200,86 +200,86 @@ function App() {
                         <input type="number" placeholder="Enter Car Price" name="price" defaultValue="" />
 
                         <hr />
-                        <input type="submit" class="registerbtn" value="Edit Listing" />
+                        <input type="submit" className="registerbtn" value="Edit Listing" />
                     </form>
                 </div>
             </section>
 
             <section id="listing-details">
                 <h1>Details</h1>
-                <div class="details-info">
+                <div className="details-info">
                     <img src="/images/audia3.jpg" alt="" />
                     <hr />
-                    <ul class="listing-props">
+                    <ul className="listing-props">
                         <li><span>Brand: </span>Audi</li>
                         <li><span>Model: </span>A3</li>
                         <li><span>Year: </span>2018</li>
                         <li><span>Price: </span>25000$</li>
                     </ul>
 
-                    <p class="description-para">Some description of this car.Lorem ipsum dolor sit amet consectetur
+                    <p className="description-para">Some description of this car.Lorem ipsum dolor sit amet consectetur
                         adipisicing elit.Sunt voluptate quam nesciunt ipsa veritatis voluptas optio debitis repellat porro
                         sapiente.</p>
 
-                    <div class="listings-buttons">
-                        <a href="#" class="button-list">Edit</a>
-                        <a href="#" class="button-list">Delete</a>
+                    <div className="listings-buttons">
+                        <a href="#" className="button-list">Edit</a>
+                        <a href="#" className="button-list">Delete</a>
                     </div>
                 </div>
             </section>
 
             <section id="my-listings">
                 <h1>My car listings</h1>
-                <div class="listings">
+                <div className="listings">
 
-                    <div class="listing">
-                        <div class="preview">
+                    <div className="listing">
+                        <div className="preview">
                             <img src="/images/audia3.jpg" alt="" />
                         </div>
                         <h2>Audi A3</h2>
-                        <div class="info">
-                            <div class="data-info">
+                        <div className="info">
+                            <div className="data-info">
                                 <h3>Year: 2018</h3>
                                 <h3>Price: 25000 $</h3>
                             </div>
-                            <div class="data-buttons">
-                                <a href="#" class="button-carDetails">Details</a>
+                            <div className="data-buttons">
+                                <a href="#" className="button-carDetails">Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <p class="no-cars"> You haven't listed any cars yet.</p>
+                    <p className="no-cars"> You haven't listed any cars yet.</p>
                 </div>
             </section>
 
             <section id="search-cars">
                 <h1>Filter by year</h1>
 
-                <div class="container">
+                <div className="container">
                     <input id="search-input" type="text" name="search" placeholder="Enter desired production year" />
-                    <button class="button-list">Search</button>
+                    <button className="button-list">Search</button>
                 </div>
 
                 <h2>Results: </h2>
-                <div class="listings">
+                <div className="listings">
 
-                    <div class="listing">
-                        <div class="preview">
+                    <div className="listing">
+                        <div className="preview">
                             <img src="/images/audia3.jpg" alt="" />
                         </div>
                         <h2>Audi A3</h2>
-                        <div class="info">
-                            <div class="data-info">
+                        <div className="info">
+                            <div className="data-info">
                                 <h3>Year: 2018</h3>
                                 <h3>Price: 25000 $</h3>
                             </div>
-                            <div class="data-buttons">
-                                <a href="#" class="button-carDetails">Details</a>
+                            <div className="data-buttons">
+                                <a href="#" className="button-carDetails">Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <p class="no-cars"> No results.</p>
+                    <p className="no-cars"> No results.</p>
                 </div>
             </section>
 
