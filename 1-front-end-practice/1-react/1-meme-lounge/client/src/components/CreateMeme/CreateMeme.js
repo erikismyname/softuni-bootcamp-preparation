@@ -1,3 +1,7 @@
+import { useState, useEffect } from 'react';
+
+import Notification from '../Notification/Notification.js';
+
 import { useUser } from '../../context/UserContext.js';
 
 import { createMeme } from '../../services/memeService.js';
@@ -5,6 +9,14 @@ import { createMeme } from '../../services/memeService.js';
 const CreateMeme = ({ history }) => {
 
     const { user } = useUser();
+
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+
+        setTimeout(() => setError(''), 3000);
+
+    }, [error]);
 
     const onFormSubmit = async (ev) => {
 
@@ -18,9 +30,13 @@ const CreateMeme = ({ history }) => {
 
         const imageUrl = formData.get('imageUrl').trim();
 
-        if (!title || !description || !imageUrl) return alert('All fields are required!');
-
         try {
+
+            if (!title || !description || !imageUrl) {
+
+                throw new Error('All fields are required!');
+
+            }
 
             await createMeme({ title, description, imageUrl }, user.accessToken);
 
@@ -28,7 +44,7 @@ const CreateMeme = ({ history }) => {
 
         } catch (err) {
 
-            alert(err);
+            (() => { setError(err.message) })();
 
         }
 
@@ -36,6 +52,7 @@ const CreateMeme = ({ history }) => {
 
     return (
         <section id="create-meme">
+            {error ? <Notification error={error} /> : ''}
             <form id="create-form" onSubmit={onFormSubmit}>
                 <div className="container">
                     <h1>Create Meme</h1>

@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import Notification from '../Notification/Notification.js';
 
 import { useUser } from '../../context/UserContext.js';
 
@@ -7,6 +10,14 @@ import { loginUser } from '../../services/userService.js';
 const UserLogin = ({ history }) => {
 
     const { addUser } = useUser();
+
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+
+        setTimeout(() => setError(''), 3000);
+
+    }, [error]);
 
     const onFormSubmit = async (ev) => {
 
@@ -18,9 +29,13 @@ const UserLogin = ({ history }) => {
 
         const password = formData.get('password').trim();
 
-        if (!email || !password) return alert('All fields are required!');
-
         try {
+
+            if (!email || !password) {
+
+                throw new Error('All fields are required!');
+
+            }
 
             const user = await loginUser({ email, password });
 
@@ -30,7 +45,7 @@ const UserLogin = ({ history }) => {
 
         } catch (err) {
 
-            alert(err);
+            (() => { setError(err.message) })();
 
         }
 
@@ -38,6 +53,7 @@ const UserLogin = ({ history }) => {
 
     return (
         <section id="login">
+            {error ? <Notification error={error} /> : ''}
             <form onSubmit={onFormSubmit} id="login-form">
                 <div className="container">
                     <h1>Login</h1>

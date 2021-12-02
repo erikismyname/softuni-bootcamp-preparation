@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import Notification from '../Notification/Notification.js';
+
 import { useUser } from '../../context/UserContext.js';
 
 import { getOneMeme, editMeme } from '../../services/memeService.js';
@@ -11,6 +13,8 @@ const EditMeme = ({ history, match }) => {
     const { user } = useUser();
 
     const [meme, setMeme] = useState([]);
+
+    const [error, setError] = useState('');
 
     useEffect(async () => {
 
@@ -28,6 +32,12 @@ const EditMeme = ({ history, match }) => {
 
     }, []);
 
+    useEffect(() => {
+
+        setTimeout(() => setError(''), 3000);
+
+    }, [error]);
+
     const onFormSubmit = async (ev) => {
 
         ev.preventDefault();
@@ -40,9 +50,13 @@ const EditMeme = ({ history, match }) => {
 
         const imageUrl = formData.get('imageUrl').trim();
 
-        if (!title || !description || !imageUrl) return alert('All fields are required!');
-
         try {
+
+            if (!title || !description || !imageUrl) {
+
+                throw new Error('All fields are required!');
+
+            }
 
             await editMeme(memeId, { title, description, imageUrl }, user.accessToken);
 
@@ -50,7 +64,7 @@ const EditMeme = ({ history, match }) => {
 
         } catch (err) {
 
-            alert(err);
+            (() => { setError(err.message) })();
 
         }
 
@@ -58,6 +72,7 @@ const EditMeme = ({ history, match }) => {
 
     return (
         <section id="edit-meme">
+            {error ? <Notification error={error} /> : ''}
             <form id="edit-form" onSubmit={onFormSubmit}>
                 <h1>Edit Meme</h1>
                 <div className="container">

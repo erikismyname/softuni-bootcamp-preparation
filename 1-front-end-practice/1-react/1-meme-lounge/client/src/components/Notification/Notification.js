@@ -1,4 +1,4 @@
-const Notification = ({error}) => {
+const Notification = ({ error }) => {
 
     return (
         <section id="notifications">

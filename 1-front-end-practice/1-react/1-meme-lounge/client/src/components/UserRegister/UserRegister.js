@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import Notification from '../Notification/Notification.js';
 
 import { useUser } from '../../context/UserContext.js';
 
@@ -7,6 +10,14 @@ import { registerUser } from '../../services/userService.js';
 const UserRegister = ({ history }) => {
 
     const { addUser } = useUser();
+
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+
+        setTimeout(() => setError(''), 3000);
+
+    }, [error]);
 
     const onFormSubmit = async (ev) => {
 
@@ -24,17 +35,17 @@ const UserRegister = ({ history }) => {
 
         const gender = formData.get('gender');
 
-        if (!username || !email || !password || !rePass || !gender) {
-
-            return alert('All fields are required!');
-
-        } else if (password != rePass) {
-
-            return alert('Password must match!');
-
-        }
-
         try {
+
+            if (!username || !email || !password || !rePass || !gender) {
+
+                throw new Error('All fields are required!');
+
+            } else if (password != rePass) {
+
+                throw new Error('Passwords must match!');
+
+            }
 
             const user = await registerUser({ username, email, password, gender });
 
@@ -44,7 +55,7 @@ const UserRegister = ({ history }) => {
 
         } catch (err) {
 
-            alert(err);
+            (() => { setError(err.message) })();
 
         }
 
@@ -52,6 +63,7 @@ const UserRegister = ({ history }) => {
 
     return (
         <section id="register">
+            {error ? <Notification error={error} /> : ''}
             <form onSubmit={onFormSubmit} id="register-form">
                 <div className="container">
                     <h1>Register</h1>
