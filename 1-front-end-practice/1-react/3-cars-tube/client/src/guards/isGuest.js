@@ -8,9 +8,11 @@ const isGuest = (WrappedComponent) => {
 
         const { user } = useUser();
 
-        if (user) return <Redirect to="/catalog" />
-
-        return <WrappedComponent {...props} />
+        return (
+            user
+                ? <Redirect to="/catalog" />
+                : <WrappedComponent {...props} />
+        );
 
     };
 
