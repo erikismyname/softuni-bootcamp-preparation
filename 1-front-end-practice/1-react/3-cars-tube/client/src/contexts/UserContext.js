@@ -18,4 +18,4 @@ const UserProvider = ({ children }) => {
 
 };
 
-return { UserContext, UserProvider };
+export { UserContext, UserProvider };
