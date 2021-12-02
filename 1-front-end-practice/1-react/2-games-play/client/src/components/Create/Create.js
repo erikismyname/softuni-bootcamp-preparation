@@ -12,9 +12,9 @@ const Create = ({ history }) => {
 
         ev.preventDefault();
 
-        const [title, category, maxLvl, imageUrl, summary] = [...ev.target].slice(0, 5).map(i => i.value);
+        const [title, category, maxLevel, imageUrl, summary] = [...ev.target].slice(0, 5).map(i => i.value).map(v => v.trim());
 
-        if (!title || !category || !maxLvl || !imageUrl || !summary) {
+        if (!title || !category || !maxLevel || !imageUrl || !summary) {
 
             return alert('All fiends are required!');
 
@@ -22,13 +22,13 @@ const Create = ({ history }) => {
 
         try {
 
-            createGame(user.accessToken, { title, category, maxLvl, imageUrl, summary });
+            await createGame(user.accessToken, { title, category, maxLevel, imageUrl, summary });
 
             history.push('/');
 
         } catch (err) {
 
-            console.log(err);
+            alert(err);
 
         }
 
@@ -56,7 +56,7 @@ const Create = ({ history }) => {
                     <Label htmlFor="summary" text="Summary:" />
                     <Textarea name="summary" id="summary" />
 
-                    <Input className="btn submit" type="submit" value="Create Game" />
+                    <input className="btn submit" type="submit" value="Create Game" />
 
                 </div>
             </form>
