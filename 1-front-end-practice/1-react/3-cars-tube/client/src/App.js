@@ -1,3 +1,7 @@
+import { Switch, Route } from 'react-router-dom';
+
+import { UserProvider } from './contexts/UserContext.js';
+
 import Header from "./components/Header/Header.js";
 import Home from "./components/Home/Home.js";
 import Login from "./components/Login/Login.js";
@@ -15,25 +19,33 @@ function App() {
     return (
         <div id="container">
 
-            <Header />
+            <UserProvider>
 
-            <Home />
+                < Header />
 
-            <Login />
+                <Switch>
 
-            <Register />
+                    <Route path="/" exact component={Home} />
 
-            <Catalog />
+                    <Route path="/catalog" component={Catalog} />
 
-            <Create />
+                    <Route path="/login" component={Login} />
 
-            <Edit />
+                    <Route path="/register" component={Register} />
 
-            <Details />
+                    <Route path="/create" component={Create} />
 
-            <Profile />
+                    <Route path="/edit/:carId" component={Edit} />
 
-            <Search />
+                    <Route path="/details/:carId" component={Details} />
+
+                    <Route path="/profile" component={Profile} />
+
+                    <Route path="/search" component={Search} />
+
+                </Switch>
+
+            </UserProvider>
 
             <Footer />
 
