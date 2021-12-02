@@ -9,7 +9,7 @@ const LatestGames = () => {
     useEffect(() => {
 
         getRecentGames()
-            .then(games => setGames(games))
+            .then(games => setGames(games.slice(0, 3)))
             .catch(err => alert(err));
 
     }, []);
