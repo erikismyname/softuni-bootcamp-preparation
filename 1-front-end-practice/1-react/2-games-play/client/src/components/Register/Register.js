@@ -58,7 +58,7 @@ const Register = ({ history }) => {
                     <Label htmlFor="con-pass" text="Confirm Password:" />
                     <Input type="password" name="confirm-password" id="confirm-password" />
 
-                    <Input className="btn submit" type="submit" value="Register" />
+                    <input className="btn submit" type="submit" value="Register" />
 
                     <p className="field">
                         <span>If you already have profile click <Link to="/login">here</Link></span>

@@ -48,7 +48,7 @@ const Login = ({ history }) => {
                     <Label for="login-pass" text="Password:" />
                     <Input type="password" id="login-password" name="password" />
 
-                    <Input type="submit" className="btn submit" value="Login" />
+                    <input type="submit" className="btn submit" value="Login" />
 
                     <p className="field" >
                         <span>If you don't have profile click <Link to="/register">here</Link></span>

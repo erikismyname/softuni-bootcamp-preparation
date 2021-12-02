@@ -9,7 +9,7 @@ const CreateComment = ({ match, history, gameId, user, onAddCommentFormSubmit })
             <label>Add new comment:</label>
             <form className="form" onSubmit={onAddCommentFormSubmit}>
                 <Textarea name="comment" placeholder="Comment......" />
-                <Input className="btn submit" type="submit" value="Add Comment" />
+                <input className="btn submit" type="submit" value="Add Comment" />
             </form>
         </article>
 
