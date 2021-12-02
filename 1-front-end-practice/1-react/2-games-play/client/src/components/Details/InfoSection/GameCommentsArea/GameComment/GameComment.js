@@ -3,7 +3,7 @@ const GameComment = ({comment}) => {
     return (
 
         <li className="comment">
-            <p>Content: {comment}.</p>
+            <p>Content: {comment}</p>
         </li>
 
     );
