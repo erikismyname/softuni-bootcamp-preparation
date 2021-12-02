@@ -1,4 +1,4 @@
-const Textarea = ({ id, name, placeholder, value }) => {
+const Textarea = ({ id, name, placeholder, defaultValue }) => {
 
     return (
 
@@ -6,7 +6,7 @@ const Textarea = ({ id, name, placeholder, value }) => {
             id={id}
             name={name}
             placeholder={placeholder}
-            value={value}
+            defaultValue={defaultValue}
         />
 
     );
