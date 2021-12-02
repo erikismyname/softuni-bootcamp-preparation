@@ -1,12 +1,12 @@
-const GameHeader = () => {
+const GameHeader = ({game}) => {
 
     return (
 
         <div className="game-header">
-            <img className="game-img" src="images/MineCraft.png" />
-            <h1>Bright</h1>
-            <span className="levels">MaxLevel: 4</span>
-            <p className="type">Action, Crime, Fantasy</p>
+            <img className="game-img" src={game.imageUrl}/>
+            <h1>{game.title}</h1>
+            <span className="levels">MaxLevel: {game.maxLvl}</span>
+            <p className="type">{game.category}</p>
         </div>
 
     );

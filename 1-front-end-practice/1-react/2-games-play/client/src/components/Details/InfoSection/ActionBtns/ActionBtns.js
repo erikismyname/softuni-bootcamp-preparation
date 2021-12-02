@@ -1,10 +1,12 @@
-const ActionBtns = () => {
+import { Link } from 'react-router-dom';
+
+const ActionBtns = ({gameId}) => {
 
     return (
 
         <div className="buttons">
-            <a href="#" className="button">Edit</a>
-            <a href="#" className="button">Delete</a>
+            <Link to={`/edit/${gameId}`} className="button">Edit</Link>
+            <button className="button">Delete</button>
         </div>
 
     );

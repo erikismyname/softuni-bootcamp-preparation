@@ -1,25 +1,49 @@
+import { useState, useEffect } from 'react';
+
+import useUser from '../../../hooks/useUser.js';
+import { getOneGame } from '../../../services/gameService.js';
+import { getAllComments } from '../../../services/commentService.js';
 import ActionBtns from "./ActionBtns/ActionBtns.js";
 import GameHeader from "./GameHeader/GameHeader.js";
-import GameComments from "./GameComments/GameComments.js";
+import GameCommentsArea from "./GameCommentsArea/GameCommentsArea.js";
 
-const InfoSection = () => {
+const InfoSection = ({ match }) => {
+
+    const gameId = match.params.gameId;
+
+    const { user } = useUser();
+
+    const [game, setGame] = useState([]);
+
+    const [comments, setComments] = useState([]);
+
+
+    useEffect(() => {
+
+        getOneGame(gameId)
+            .then(game => setGame(game))
+            .catch(err => alert(err));
+
+        getAllComments(gameId)
+            .then(comments => setComments(comments))
+            .catch(err => alert(err));
+
+    }, []);
 
     return (
 
         <div className="info-section">
 
-            <GameHeader />
+            <GameHeader game={game} />
 
-            <p className="text">
-                Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work
-                with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy
-                creatures live side by side with humans. A human cop is forced
-                to work with an Orc to find a weapon everyone is prepared to kill for.
-            </p>
+            <p className="text">{game.summary}</p>
 
-            <GameComments />
+            <GameCommentsArea comments={comments} />
 
-            <ActionBtns />
+            {user._id == game._ownerId
+                ? <ActionBtns gameId={gameId} />
+                : ''
+            }
 
         </div>
 

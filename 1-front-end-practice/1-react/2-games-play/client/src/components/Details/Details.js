@@ -1,14 +1,14 @@
 import InfoSection from "./InfoSection/InfoSection.js";
 import CreateComment from "./CreateComment/CreateComment.js";
 
-const Details = () => {
+const Details = ({match}) => {
 
     return (
 
         <section id="game-details">
             <h1>Game Details</h1>
 
-            <InfoSection />
+            <InfoSection match={match} />
 
             <CreateComment />
 
