@@ -15,7 +15,7 @@ const InfoSection = ({gameId, game, comments, user}) => {
             <GameCommentsArea comments={comments} />
 
             {user._id === game._ownerId
-                ? <ActionBtns gameId={gameId} />
+                ? <ActionBtns gameId={gameId} user={user} />
                 : ''
             }
 
