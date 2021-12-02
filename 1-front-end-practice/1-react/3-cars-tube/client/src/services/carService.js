@@ -5,7 +5,7 @@ const getAllCars = async () => api.getRequest(`${ENDPOINTS.car}/?sortBy=_created
 
 const getOneCar = async (carId) => api.getRequest(`${ENDPOINTS.car}/${carId}`);
 
-const getMyCars = async (userId, token) => api.getRequest(`${ENDPOINTS.car}?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`, token)
+const getMyCars = async (userId, token) => api.getRequest(`${ENDPOINTS.car}?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`, token);
 
 const createCar = async (token, carData) => api.postRequest(ENDPOINTS.car, token, carData);
 
