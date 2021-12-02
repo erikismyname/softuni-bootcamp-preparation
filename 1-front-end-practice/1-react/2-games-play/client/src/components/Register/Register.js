@@ -13,7 +13,7 @@ const Register = ({ history }) => {
 
         ev.preventDefault();
 
-        const [email, password, rePass] = [...ev.target].slice(0, 3).map(i => i.value);
+        const [email, password, rePass] = [...ev.target].slice(0, 3).map(i => i.value).map(v => v.trim());
 
         if (!email || !password || !rePass) {
 

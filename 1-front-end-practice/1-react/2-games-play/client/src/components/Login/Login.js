@@ -13,9 +13,7 @@ const Login = ({ history }) => {
 
         ev.preventDefault();
 
-        console.log();
-
-        const [email, password] = [...ev.target].slice(0, 2).map(i => i.value);
+        const [email, password] = [...ev.target].slice(0, 2).map(i => i.value).map(v => v.trim());
 
         if (!email || !password) return alert('All fields are required!');
 
