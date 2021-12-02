@@ -16,7 +16,6 @@ const isGuest = (WrappedComponent) => {
 
     return ComponentWrapper;
 
-
 };
 
 export default isGuest;
