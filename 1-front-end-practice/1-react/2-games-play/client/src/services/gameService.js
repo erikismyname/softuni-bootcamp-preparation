@@ -9,7 +9,7 @@ async function getAllGames() {
 
 async function getRecentGames() {
 
-    return api.getRequest(`${ENDPOINTS.game}?sortBy=_createdOn%20desc&distinct=category`);
+    return api.getRequest(`${ENDPOINTS.game}?sortBy=_createdOn%20desc`);
 
 }
 
