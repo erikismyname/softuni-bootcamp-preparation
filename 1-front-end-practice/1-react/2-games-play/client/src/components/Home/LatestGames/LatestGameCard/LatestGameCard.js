@@ -6,7 +6,7 @@ const LatestGameCard = ({ game }) => {
 
         <div className="game">
             <div className="image-wrap">
-                <img src={game.imageUrl} />
+                <img src={game.imageUrl} alt="" />
             </div>
             <h3>{game.title}</h3>
             <div className="rating">

@@ -19,7 +19,7 @@ const Register = ({ history }) => {
 
             return alert('All fields are required!');
 
-        } else if (password != rePass) {
+        } else if (password !== rePass) {
 
             return alert('Passwords must match!');
 

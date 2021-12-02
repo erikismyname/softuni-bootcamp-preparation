@@ -6,7 +6,7 @@ const CatalogGameCard = ({ game }) => {
 
         <div className="allGames">
             <div className="allGames-info">
-                <img src={game.imageUrl} />
+                <img src={game.imageUrl} alt="" />
                 <h6>{game.category}</h6>
                 <h2>{game.title}</h2>
                 <Link to={`/details/${game._id}`} className="details-button">Details</Link>
