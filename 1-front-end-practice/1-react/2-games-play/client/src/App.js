@@ -1,7 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
 
 import { UserProvider } from './contexts/UserContext.js';
-
+import isUser from './guards/isUser.js';
+import isGuest from './guards/isGuest.js';
 import Header from "./components/Header/Header.js";
 import Home from "./components/Home/Home.js";
 import Login from "./components/Login/Login.js";
@@ -27,15 +28,15 @@ function App() {
 
                     <Route path="/catalog" component={Catalog} />
 
-                    <Route path="/login" component={Login} />
+                    <Route path="/login" component={isGuest(Login)} />
 
-                    <Route path="/register" component={Register} />
+                    <Route path="/register" component={isGuest(Register)} />
 
                     <Route path="/details/:gameId" component={Details} />
 
-                    <Route path="/create" component={Create} />
+                    <Route path="/create" component={isUser(Create)} />
 
-                    <Route path="/edit/:gameId" component={Edit} />
+                    <Route path="/edit/:gameId" component={isUser(Edit)} />
 
                 </Switch>
 
