@@ -13,6 +13,6 @@ const updateCar = async (carId, token, carData) => api.putRequest(`${ENDPOINTS.c
 
 const deleteCar = async (carId, token) => api.deleteRequest(`${ENDPOINTS.car}/${carId}`, token);
 
-const filterCarsByYear = async (carYear, token) => api.getRequest(`${ENDPOINTS.car}/?where=year%3D${carYear}`);
+const filterCarsByYear = async (carYear) => api.getRequest(`${ENDPOINTS.car}/?where=year%3D${carYear}`);
 
 export { getAllCars, getOneCar, getMyCars, createCar, updateCar, deleteCar, filterCarsByYear };
