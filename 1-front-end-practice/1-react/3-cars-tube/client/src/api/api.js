@@ -1,32 +1,24 @@
 const request = async (url, options) => {
 
+    const response = await fetch(url, options);
+
+    if (!response.ok) {
+
+        const error = await response.json();
+
+        throw new Error(error.message);
+
+    }
+
     try {
 
-        const response = await fetch(url, options);
+        const data = await response.json();
 
-        if (!response.ok) {
-
-            const error = await response.json();
-
-            throw new Error(error.message);
-
-        }
-
-        try {
-
-            const data = await response.json();
-
-            return data;
-
-        } catch (err) {
-
-            return response;
-
-        }
+        return data;
 
     } catch (err) {
 
-        alert(err.message);
+        return response;
 
     }
 
