@@ -1,26 +1,40 @@
-const Details = () => {
+import { useState, useEffect } from 'react';
+
+import useUser from '../../hooks/useUser.js';
+
+import { getOneCar } from '../../services/carService.js';
+
+import CarInfo from './CarInfo/CarInfo.js';
+import ActionBtns from './ActionBtns/ActionBtns.js';
+
+const Details = ({ match }) => {
+
+    const carId = match.params.carId;
+
+    const { user } = useUser();
+
+    const [car, setCar] = useState({});
+
+    useEffect(() => {
+
+        getOneCar(carId)
+            .then(car => setCar(car))
+            .catch(err => alert(err));
+
+    }, []);
 
     return (
         <section id="listing-details">
             <h1>Details</h1>
             <div className="details-info">
-                <img src="/images/audia3.jpg" alt="" />
-                <hr />
-                <ul className="listing-props">
-                    <li><span>Brand: </span>Audi</li>
-                    <li><span>Model: </span>A3</li>
-                    <li><span>Year: </span>2018</li>
-                    <li><span>Price: </span>25000$</li>
-                </ul>
 
-                <p className="description-para">Some description of this car.Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit.Sunt voluptate quam nesciunt ipsa veritatis voluptas optio debitis repellat porro
-                    sapiente.</p>
+                <CarInfo car={car} />
 
-                <div className="listings-buttons">
-                    <a href="#" className="button-list">Edit</a>
-                    <a href="#" className="button-list">Delete</a>
-                </div>
+                {user?._id === car._ownerId
+                    ? <ActionBtns carId={carId} token={user.accessToken} />
+                    : ''
+                }
+
             </div>
         </section>
     );
