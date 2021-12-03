@@ -44,7 +44,7 @@ function App() {
 
                     <Route path="/profile" component={isUser(Profile)} />
 
-                    <Route path="/search" component={Search} />
+                    <Route path="/filter-by-year" component={Search} />
 
                 </Switch>
 

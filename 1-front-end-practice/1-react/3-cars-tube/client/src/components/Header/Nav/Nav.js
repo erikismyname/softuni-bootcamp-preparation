@@ -13,7 +13,7 @@ const Nav = () => {
         <nav>
             <NavLink to="/" exact>Home</NavLink>
             <NavLink to="/catalog">All Listings</NavLink>
-            <NavLink to="/search">By Year</NavLink>
+            <NavLink to="/filter-by-year">By Year</NavLink>
 
             {user ? <UserNav /> : <GuestNav />}
 
