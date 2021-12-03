@@ -1,34 +1,65 @@
+import { useState } from 'react';
+
+import { filterCarsByYear } from '../../services/carService.js';
+
+import CarCard from '../../components/common/CarCard/CarCard.js';
+
 const Search = () => {
+
+    const [isSearched, setIsSearched] = useState(false);
+
+    const [cars, setCars] = useState([]);
+
+    const onSearchFormSubmit = async (ev) => {
+
+        ev.preventDefault();
+
+        const year = ev.target.search.value.trim();
+
+        if (isNaN(year) || year <= 0) {
+
+            return alert('Year must be a positive number!');
+
+        }
+
+        try {
+
+            const cars = await filterCarsByYear(year);
+
+            setIsSearched(true);
+
+            (async () => { setCars(cars) })();
+
+        } catch (err) {
+
+            alert(err);
+
+        }
+
+    };
+
+    const searchResult = (
+        cars.length
+            ? cars.map(c => <CarCard key={c._id} car={c} />)
+            : <p className="no-cars"> No results.</p>
+    );
 
     return (
         <section id="search-cars">
             <h1>Filter by year</h1>
 
             <div className="container">
-                <input id="search-input" type="text" name="search" placeholder="Enter desired production year" />
-                <button className="button-list">Search</button>
+                <form onSubmit={onSearchFormSubmit}>
+                    <input id="search-input" type="text" name="search" placeholder="Enter desired production year" />
+                    <input type="submit" className="button-list" value="Search" />
+                </form>
             </div>
 
             <h2>Results: </h2>
             <div className="listings">
 
-                <div className="listing">
-                    <div className="preview">
-                        <img src="/images/audia3.jpg" alt="" />
-                    </div>
-                    <h2>Audi A3</h2>
-                    <div className="info">
-                        <div className="data-info">
-                            <h3>Year: 2018</h3>
-                            <h3>Price: 25000 $</h3>
-                        </div>
-                        <div className="data-buttons">
-                            <a href="#" className="button-carDetails">Details</a>
-                        </div>
-                    </div>
-                </div>
+                {isSearched ? searchResult : ''}
 
-                <p className="no-cars"> No results.</p>
             </div>
         </section>
     );
