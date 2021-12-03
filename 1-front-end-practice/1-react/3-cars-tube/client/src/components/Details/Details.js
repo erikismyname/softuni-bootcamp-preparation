@@ -31,7 +31,7 @@ const Details = ({ match }) => {
                 <CarInfo car={car} />
 
                 {user?._id === car._ownerId
-                    ? <ActionBtns carId={carId} token={user.accessToken} />
+                    ? <ActionBtns carId={carId} token={user?.accessToken} />
                     : ''
                 }
 
