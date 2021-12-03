@@ -18,7 +18,7 @@ const UserNav = () => {
 
         addUser(null);
 
-        history.push('/home');
+        history.push('/');
 
     };
 
