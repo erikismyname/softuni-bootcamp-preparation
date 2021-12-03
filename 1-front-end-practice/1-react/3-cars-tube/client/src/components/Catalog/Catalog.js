@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { getAllCars } from '../../services/carService.js';
 
-import CarCard from './CarCard/CarCard.js';
+import CarCard from '../common/CarCard/CarCard.js';
 
 const Catalog = () => {
 
