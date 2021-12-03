@@ -20,11 +20,19 @@ const Login = ({ history }) => {
 
         if (!username || !password) return alert('All fields are required!');
 
-        const user = await loginUser({ username, password });
+        try {
 
-        addUser(user);
+            const user = await loginUser({ username, password });
 
-        history.push('/catalog');
+            addUser(user);
+
+            history.push('/catalog');
+
+        } catch (err) {
+
+            alert(err);
+
+        }
 
     };
 
