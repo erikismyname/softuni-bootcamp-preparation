@@ -1,9 +1,37 @@
-const Login = () => {
+import { Link } from "react-router-dom";
+
+import useUser from '../../hooks/useUser.js';
+
+import { loginUser } from '../../services/userService.js';
+
+const Login = ({ history }) => {
+
+    const { addUser } = useUser();
+
+    const onLoginFormSubmit = async (ev) => {
+
+        ev.preventDefault();
+
+        const formData = new FormData(ev.target);
+
+        const username = formData.get('username').trim();
+
+        const password = formData.get('password').trim();
+
+        if (!username || !password) return alert('All fields are required!');
+
+        const user = await loginUser({ username, password });
+
+        addUser(user);
+
+        history.push('/catalog');
+
+    };
 
     return (
         <section id="login">
             <div className="container">
-                <form id="login-form" action="#" method="post">
+                <form id="login-form" onSubmit={onLoginFormSubmit}>
                     <h1>Login</h1>
                     <p>Please enter your credentials.</p>
                     <hr />
@@ -17,7 +45,7 @@ const Login = () => {
                 </form>
                 <div className="signin">
                     <p>Dont have an account?
-                        <a href="#">Sign up</a>.
+                        <Link to="/register">Sign up</Link>.
                     </p>
                 </div>
             </div>
