@@ -24,7 +24,7 @@ const UserNav = () => {
 
     return (
         <div id="profile">
-            <a>Welcome, {user.username}</a>
+            <a href="#">Welcome, {user.username}</a>
             <NavLink to="/profile">My Listings</NavLink>
             <NavLink to="/create">Create Listing</NavLink>
             <NavLink to="/logout" onClick={onLogoutBtnClick}>Logout</NavLink>
