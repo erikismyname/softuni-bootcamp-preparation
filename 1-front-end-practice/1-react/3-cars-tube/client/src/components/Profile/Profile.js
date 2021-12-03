@@ -1,27 +1,35 @@
+import { useState, useEffect } from "react";
+
+import CarCard from "../common/CarCard/CarCard.js";
+
+import useUser from '../../hooks/useUser.js';
+
+import { getMyCars } from '../../services/carService.js';
+
 const Profile = () => {
+
+    const { user } = useUser();
+
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+
+        getMyCars(user._id, user.accessToken)
+            .then(cars => setCars(cars))
+            .catch(err => alert(err));
+
+    }, []);
 
     return (
         <section id="my-listings">
             <h1>My car listings</h1>
             <div className="listings">
 
-                <div className="listing">
-                    <div className="preview">
-                        <img src="/images/audia3.jpg" alt="" />
-                    </div>
-                    <h2>Audi A3</h2>
-                    <div className="info">
-                        <div className="data-info">
-                            <h3>Year: 2018</h3>
-                            <h3>Price: 25000 $</h3>
-                        </div>
-                        <div className="data-buttons">
-                            <a href="#" className="button-carDetails">Details</a>
-                        </div>
-                    </div>
-                </div>
+                {cars.length
+                    ? cars.map(c => <CarCard key={c._id} car={c} />)
+                    : <p className="no-cars"> You haven't listed any cars yet.</p>
+                }
 
-                <p className="no-cars"> You haven't listed any cars yet.</p>
             </div>
         </section>
     );
