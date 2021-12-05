@@ -24,7 +24,7 @@ const request = async (url, options) => {
 
 };
 
-const getOptions = (method, token, body) => {
+const getRequestOptions = (method, token, body) => {
 
     const options = {
         method,
@@ -44,3 +44,17 @@ const getOptions = (method, token, body) => {
     return options;
 
 }
+
+const getRequest = async (url, token) =>
+    request(url, getRequestOptions('GET', token));
+
+const postRequest = async (url, token, body) =>
+    request(url, getRequestOptions('POST', token, body));
+
+const putRequest = async (url, token, body) =>
+    request(url, getRequestOptions('PUT', token, body));
+
+const deleteRequest = async (url, token) =>
+    request(url, getRequestOptions('DELETE', token));
+
+export { getRequest, postRequest, putRequest, deleteRequest };
