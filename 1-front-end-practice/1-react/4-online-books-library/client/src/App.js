@@ -1,5 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 
+import { UserProvider } from './contexts/UserContext.js';
+
 import Header from "./components/Header/Header.js";
 import Dashboard from "./components/Dashboard/Dashboard.js";
 import Login from "./components/Login/Login.js";
@@ -15,25 +17,29 @@ function App() {
     return (
         <div id="container">
 
-            < Header />
+            <UserProvider>
 
-            <Switch>
+                < Header />
 
-                <Route path="/dashboard" component={Dashboard} />
+                <Switch>
 
-                <Route path="/login" component={Login} />
+                    <Route path="/dashboard" component={Dashboard} />
 
-                <Route path="/register" component={Register} />
+                    <Route path="/login" component={Login} />
 
-                <Route path="/details/:bookId" component={Details} />
+                    <Route path="/register" component={Register} />
 
-                <Route path="/edit/:bookId" component={Edit} />
+                    <Route path="/details/:bookId" component={Details} />
 
-                <Route path="/create" component={Create} />
+                    <Route path="/edit/:bookId" component={Edit} />
 
-                <Route path="/my-books" component={MyBooks} />
+                    <Route path="/create" component={Create} />
 
-            </Switch>
+                    <Route path="/my-books" component={MyBooks} />
+
+                </Switch>
+
+            </UserProvider>
 
             <Footer />
 
