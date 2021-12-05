@@ -8,8 +8,10 @@ const UserProvider = ({ children }) => {
 
     const addUser = (user) => setUser(user);
 
+    const value = { user, addUser };
+
     return (
-        <UserContext.Provider value={user, addUser}>
+        <UserContext.Provider value={value}>
             {children}
         </UserContext.Provider>
     );
