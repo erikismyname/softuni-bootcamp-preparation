@@ -31,7 +31,7 @@ const UserNav = () => {
 
     return (
         <div id="user">
-            <span>Welcome, email</span>
+            <span>Welcome, {user.email}</span>
             <Link className="button" to="/my-books">My Books</Link>
             <Link className="button" to="/create">Add Book</Link>
             <Link
