@@ -1,4 +1,4 @@
-
+import { Switch, Route } from 'react-router-dom';
 
 import Header from "./components/Header/Header.js";
 import Dashboard from "./components/Dashboard/Dashboard.js";
@@ -15,21 +15,25 @@ function App() {
     return (
         <div id="container">
 
-            <Header />
+            < Header />
 
-            <Dashboard />
+            <Switch>
 
-            <Login />
+                <Route path="/dashboard" component={Dashboard} />
 
-            <Register />
+                <Route path="/login" component={Login} />
 
-            <Details />
+                <Route path="/register" component={Register} />
 
-            <Create />
+                <Route path="/details/:bookId" component={Details} />
 
-            <Edit />
+                <Route path="/edit/:bookId" component={Edit} />
 
-            <MyBooks />
+                <Route path="/create" component={Create} />
+
+                <Route path="/my-books" component={MyBooks} />
+
+            </Switch>
 
             <Footer />
 
